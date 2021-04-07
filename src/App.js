@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './css/App.css';
+import Header from './components/Header';
+import Form from './components/Form';
+import Result from './components/Result';
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {},
+            main: <Form formSubmit={this.submit} />,
+        };
+        this.editForm = this.editForm.bind(this);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        //this.main = <Form formSubmit={this.getData} value={this.state.data} />;
+    }
+    submit = async (formData) => {
+        this.setState({
+            data: formData,
+            main: <Result editClicked={this.editForm} info={formData} />,
+        });
+    };
+    editForm = () => {
+        this.setState({
+            main: <Form formSubmit={this.submit} value={this.state.data} />,
+        });
+    };
+    render() {
+        return (
+            <div>
+                <Header title="CV Builder" />
+                {this.state.main}
+            </div>
+        );
+    }
 }
 
 export default App;

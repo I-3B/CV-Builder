@@ -1,0 +1,19 @@
+:root {
+    --main-background-color: rgb(49, 49, 49);
+}
+body {
+    font-family: 'Century Gothic', 'Lucida Sans';
+    color: aliceblue;
+    background-color: var(--main-background-color);
+}
+form,
+#cv {
+    animation-name: come-left;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes come-left {
+    0% {
+        transform: translateX(-100%);
+    }
+}
