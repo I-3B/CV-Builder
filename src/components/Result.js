@@ -55,11 +55,11 @@ export default class Result extends React.Component {
                             <p>{personal['phone-number-input']}</p>
                             <h4>Email</h4>
                             <p>{personal['email-input']}</p>
+                            <div id="edit" onClick={this.editForm}>
+                                Edit
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="edit" onClick={this.editForm}>
-                    Edit
                 </div>
             </div>
         );

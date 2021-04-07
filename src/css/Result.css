@@ -20,6 +20,7 @@ h1 {
 #personal-info {
     background-color: rgb(236, 236, 236);
     padding: 1em;
+    position: relative;
 }
 #personal-info h4 {
     margin: 0em;
@@ -30,4 +31,20 @@ h1 {
 }
 #overview {
     padding: 1em;
+}
+#edit {
+    position: absolute;
+    bottom: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: auto;
+    padding: 0.5em 3.5em;
+    transition: 0.5s;
+    text-align: center;
+    background-color: aliceblue;
+}
+#edit:hover {
+    color: yellowgreen;
+    background-color: rgb(49, 49, 49);
 }
